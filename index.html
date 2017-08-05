@@ -196,7 +196,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button onclick='showSubtitle()'>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -549,16 +549,18 @@ function showSubtitle()
   var siteNav=document.getElementById("site-nav");
   if(siteNav.style.display=="block")
   {
-   var subTitle=document.getElementById("site-subtitle");
-   subTitle.style.display="none";
+   var subTitle=document.getElementsByClassName("site-subtitle");
+   console.log(subTitle)
+   subTitle[0].style.display="none";
   }else
   {
-   var subTitle=document.getElementById("site-subtitle");
-   subTitle.style.display="block";
+   var subTitle=document.getElementsByClassName("site-subtitle");
+   subTitle[0].style.display="block";
   }
 
 }
 </script>
+
   
   
 
