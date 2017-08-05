@@ -190,7 +190,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">思慕至深</p>
+        <p class="site-subtitle">Hello~</p>
       
   </div>
 
@@ -203,7 +203,7 @@
   </div>
 </div>
 
-<nav class="site-nav">
+<nav class="site-nav" id="site-nav">
   
 
   
@@ -599,6 +599,22 @@
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
+  </script>
+<script type="text/JavaScript">
+function showSubtitle()
+{
+  var siteNav=document.getElementById("site-nav");
+  if(siteNav.style.display=="block")
+  {
+   var subTitle=document.getElementById("site-subtitle");
+   subTitle.style.display="none";
+  }else
+  {
+   var subTitle=document.getElementById("site-subtitle");
+   subTitle.style.display="block";
+  }
+}
+</script>
 
   
   
