@@ -469,7 +469,36 @@
     
 
   </div>
+  <script type="text/JavaScript">
+function hideElement(elementID)
+{
+	var myele=document.getElementById(elementID);
+	myele.style.display="none";
+}
 
+function showElement(elementID)
+{
+	var myele=document.getElementById(elementID);
+	myele.style.display="block";
+}
+</script>
+
+<script type="text/JavaScript">
+function showSubtitle()
+{
+  var siteNav=document.getElementById("site-nav");
+  if(siteNav.style.display=="block")
+  {
+   var subTitle=document.getElementById("site-subtitle");
+   subTitle.style.display="none";
+  }else
+  {
+   var subTitle=document.getElementById("site-subtitle");
+   subTitle.style.display="block";
+  }
+
+}
+</script>
   
   
 
@@ -532,22 +561,6 @@
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
-  </script>
-<script type="text/JavaScript">
-function showSubtitle()
-{
-  var siteNav=document.getElementById("site-nav");
-  if(siteNav.style.display=="block")
-  {
-   var subTitle=document.getElementById("site-subtitle");
-   subTitle.style.display="none";
-  }else
-  {
-   var subTitle=document.getElementById("site-subtitle");
-   subTitle.style.display="block";
-  }
-}
-</script>
 
   
   
@@ -566,7 +579,7 @@ function showSubtitle()
     </script>
   
 
-
+  
   
 
 
@@ -627,7 +640,6 @@ function showSubtitle()
 
   
 
-
-
+  
 </body>
 </html>
