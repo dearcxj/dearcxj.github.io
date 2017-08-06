@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[test_my_site]]></title>
-      <url>/2017/08/04/test-my-site/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[test_my_site]]></title>
+    <url>%2F2017%2F08%2F04%2Ftest-my-site%2F</url>
+    <content type="text"></content>
+  </entry>
 </search>
