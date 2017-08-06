@@ -189,7 +189,7 @@ body {
   font-size: 14px;
   line-height: 2;
   color: #555;
-  background: #effcf2;
+  background: #e6e6fa;
 }
 @media (max-width: 767px) {
   body {
@@ -1076,7 +1076,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #199475;
+  background: #3b5998;
 }
 .site-meta {
   margin: 0;
@@ -2049,7 +2049,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f6f;
+  background: #aa2086;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2928,7 +2928,7 @@ img:hover {
   float: left;
   margin-top: 300px;
   width: 240px;
-  background: #effcf2;
+  background: #e6e6fa;
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2981,7 +2981,7 @@ img:hover {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #199475;
+  background: #3b5998;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -3315,7 +3315,7 @@ img:hover {
 }
 .site-author-image:hover {
   border-radius: 0;
-  border: 1px solid #199475;
+  border: 1px solid #3b5998;
 }
 @-moz-keyframes shake {
   from, to {
