@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[记建站历程及其他]]></title>
-    <url>%2F2017%2F08%2F10%2F%E8%AE%B0%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B%E5%8F%8A%E5%85%B6%E4%BB%96%2F</url>
+    <title><![CDATA[建站历程及其他]]></title>
+    <url>%2F2017%2F08%2F10%2F%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B%E5%8F%8A%E5%85%B6%E4%BB%96%2F</url>
     <content type="text"><![CDATA[始于兴趣，但不会终于兴趣。 8月4日下午，可以说是心血来潮，匆匆去万网挑注好域名后，随即便兴奋地投身进看似容易的工作。但实际上，建站过程中碰到的麻烦远远出乎意料。由于吝啬租服务器的费用，必须借助第三方托管，实现部署到域名。经过再三考虑，最终选定了GitHub搭建平台，运行基于Hexo的博客框架。 自定义完底层代码，就开始着手视觉上的优化。从未接触过JavaScript的我，转途研究起了动画特效。才发现，无足轻重的图片旋转效果，需要几十行的代码加以调试，同时又如Visual Basic中变量声明不可或缺。这里要感谢朋友leekoho，如果没有他的Node.js等相关环境配置指导，网页全局提升现在的水准至少得推迟三四天。 最头疼的莫过于编辑博文，和平时在Word里调整参数截然不同。想要构成一篇复杂格式的文章，必须掌握Markdown、CSS的语法。例如设置： 字体颜色：&lt;font color=#E6E6FA&gt;Example&lt;/font&gt; 首行缩进：&lt;p style=&quot;text-indent: 2em&quot;&gt;Example&lt;/p&gt; …… 如同自己的成长，DearCXJ.com的完美也源于一点一滴的积累。 有些时候，成就感一样也是幸福感。——《守护丽人》 太阳升起 奸巧语 秽污词 市井气 切戒之 ——《弟子规•信》]]></content>
       <categories>
         <category>日记</category>
