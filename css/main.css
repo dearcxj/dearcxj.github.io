@@ -1602,7 +1602,7 @@ pre .javascript .function {
 .posts-expand .post-eof {
   display: block;
   margin: 80px auto 60px;
-  width: 35%;
+  width: 25%;
   height: 1px;
   background: #ccc;
   text-align: center;
@@ -1940,7 +1940,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6bff5e;
+  background: #81acfe;
 }
 .links-of-blogroll {
   font-size: 13px;
