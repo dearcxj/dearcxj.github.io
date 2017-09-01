@@ -1036,7 +1036,6 @@ pre .javascript .function {
   margin: 10px;
 }
 .back-to-top {
-  box-sizing: border-box;
   position: fixed;
   bottom: -100px;
   right: 30px;
@@ -1044,7 +1043,7 @@ pre .javascript .function {
   padding: 0 6px;
   width: 24px;
   background: #222;
-  font-size: 12px;
+  font-size: 20px;
   opacity: 0.6;
   color: #fff;
   cursor: pointer;
@@ -1242,7 +1241,7 @@ pre .javascript .function {
 }
 @media (max-width: 767px) {
   .posts-expand {
-    margin: 0 20px;
+    margin: 0;
   }
   .post-body pre {
     padding: 10px;
@@ -1303,7 +1302,6 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: auto;
   padding: 3px;
-  border: 1px solid #ddd;
 }
 .posts-expand .fancybox img {
   margin: 0 auto;
@@ -1942,7 +1940,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff81ff;
+  background: #ffff03;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3225,6 +3223,17 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+@media (max-width: 767px) {
+  .posts-expand .post-meta {
+    margin-bottom: 30px;
+  }
+  .post-button {
+    margin-top: 30px;
+  }
+  .posts-expand .post-eof {
+    margin: 50px auto;
+  }
 }
 @-moz-keyframes shake {
   from, to {
