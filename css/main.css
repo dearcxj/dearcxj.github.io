@@ -928,7 +928,7 @@ pre .javascript .function {
   font-size: 14px;
   color: #fff;
   background: #222;
-  border: 2px solid #f17c67;
+  border: 1px solid #f17c67;
   text-decoration: none;
   border-radius: 0;
   transition-property: background-color;
@@ -1940,7 +1940,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff26e7;
+  background: #9ed1db;
 }
 .links-of-blogroll {
   font-size: 13px;
