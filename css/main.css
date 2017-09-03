@@ -1448,7 +1448,7 @@ pre .javascript .function {
   position: absolute;
   width: 100%;
   height: 2px;
-  bottom: -5px;
+  bottom: -3px;
   left: 0;
   background-color: #f17c67;
   visibility: hidden;
@@ -1940,7 +1940,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffaacf;
+  background: #ff7aff;
 }
 .links-of-blogroll {
   font-size: 13px;
