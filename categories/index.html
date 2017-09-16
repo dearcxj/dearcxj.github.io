@@ -462,7 +462,7 @@
         
 
 <br>
-
+<!--天气<center><iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=5" width="130" height="30" frameborder="0" marginwidth="0" marginheight="20" scrolling="no" ></iframe></center>-->
 <!--网易云音乐<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34509603&auto=0&height=66"></iframe>-->
 
 		
@@ -974,6 +974,21 @@ function showSubtitle()
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
