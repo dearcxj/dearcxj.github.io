@@ -9,7 +9,7 @@ body {
 	-webkit-font-smoothing:antialiased;
 	line-height: 1.8em;
 	text-shadow: 0 0 1px rgba(255,255,255,0.1);
-	background: #fff;
+	background: #0000;
 }
 img {border-width: 0px;}
 a{
@@ -49,13 +49,13 @@ a{
 	background-size: 20px;
 	border-radius: 35px;
 	text-align: center;
-	left: calc(50% - 120px);
+	left: calc(50% - 90px);
 	top: calc(50% - 60px);
 	z-index: -1;
 	transform: rotatez(-15deg );
 }
 #donateBox {
-	left: calc(50% - 100px);
+	left: calc(50% - 80px);
 	top: calc(50% - 15px);
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -94,20 +94,7 @@ a{
 #donateBox a {
 	display: block;
 }
-#donateBox #PayPal {
-	background-image: url(images/paypal.svg);
-}
-#donateBox>#BTC {
-	background-image: url(images/bitcoin.svg);
-	line-height: 28px;
-}
-#donateBox>#BTC:hover {
-	overflow: visible;
-}
-#BTC>button {
-	opacity: 0;
-	cursor: pointer;
-}
+
 #donateBox #AliPay {
 	background-image: url(images/alipay.svg);
 }
@@ -151,7 +138,7 @@ a{
 #github {
 	width: 24px;
 	height: 24px;
-	left: calc(50% + 40px);
+	left: calc(50% + 55px);
 	top: calc(50% - 30px);
 	background: no-repeat center center url(images/github.svg);
 	background-size: contain;
