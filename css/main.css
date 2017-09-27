@@ -1450,7 +1450,7 @@ pre .javascript .function {
   height: 2px;
   bottom: -3px;
   left: 0;
-  background-color: #f17c67;
+  background-color: #555;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
@@ -1940,7 +1940,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57beff;
+  background: #fb50ff;
 }
 .links-of-blogroll {
   font-size: 13px;
