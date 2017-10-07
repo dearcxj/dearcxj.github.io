@@ -124,12 +124,12 @@ h2.article-head {
   box-sizing: border-box;
   top: 0;
   left: 0;
-  padding: 0px 0px 0px 0px;
+  padding: 60px 20px 25px 20px;
   text-align: center;
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 0px 0px;
 }
 @media screen and (max-width: 480px) {
   #article-banner {
@@ -139,8 +139,8 @@ h2.article-head {
 #article-banner h2 {
   margin: 0.4em 0;
   font-size: 2.2em;
-  color: #fff;
-  text-shadow: 0 0 40px #34495e;
+  color: #42b983;
+  text-shadow: 0 0 10px #fff;
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.4s;
@@ -152,7 +152,7 @@ h2.article-head {
 }
 #article-banner .post-date {
   margin: 10px 0 20px 0;
-  color: #fff;
+  color: #7f8c8d;
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.4s;
@@ -330,6 +330,7 @@ h2.article-head {
   width: 100%;
   z-index: 200;
   transition: background 0.5s;
+  box-shadow: 0 0 3px rgba(14,14,14,0.26);
 }
 .fixed-header {
   position: fixed;
@@ -370,7 +371,7 @@ h2.article-head {
   align-items: center;
   float: left;
   font-weight: 500;
-  color: #fff;
+  color: #42b983;
   font-size: 1.5em;
   line-height: 40px;
 }
@@ -392,7 +393,7 @@ h2.article-head {
   height: 40px;
   line-height: 40px;
   text-decoration: none;
-  color: #fff;
+  color: #34495e;
   padding-bottom: 3px;
 }
 .item-link:hover {
@@ -414,7 +415,7 @@ h2.article-head {
   height: 2px;
   border-radius: 1px;
   margin-top: 4px;
-  background-color: #fff;
+  background-color: #7f8c8d;
 }
 @media screen and (max-width: 480px) {
   .menu {
