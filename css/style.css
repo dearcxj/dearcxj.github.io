@@ -815,12 +815,6 @@ h2.article-head {
   display: block;
   border-radius: 50%;
 }
-@media screen and (max-width: 480px) {
-  .author {
-    width: 100px;
-    height: 100px;
-  }
-}
 .author h3 {
   font-size: 1.4em;
   opacity: 0;
