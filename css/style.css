@@ -135,7 +135,7 @@ h2.article-head {
 }
 @media screen and (max-width: 480px) {
   #article-banner {
-    padding: 40px 10px 10px 10px;
+    padding: 40px 10px 0px 10px;
   }
 }
 #article-banner h2 {
