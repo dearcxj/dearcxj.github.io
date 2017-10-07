@@ -51,6 +51,12 @@
       
         <li class="list-item">
           
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
             <a href="/archives/" class="item-link">Archives</a>
           
         </li>
@@ -84,6 +90,12 @@
         
           <li class="menu-item">
             
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
               <a href="/archives/" class="menu-link">Archives</a>
             
           </li>
@@ -111,7 +123,8 @@
   <article class="post-article">
     <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>两个及以上Hexo blog同时完成GitHub部署</p>
 <a id="more"></a> 
-<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#生成第一个SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;E-mail 1&quot;</div><div class="line">#生成第二个SSH key并命名为id_rsa_life</div><div class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_life -C &quot;E-mail 2&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#生成第一个SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;E-mail 1&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#生成第二个SSH key并命名为id_rsa_life</div><div class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_life -C &quot;E-mail 2&quot;</div></pre></td></tr></table></figure>
 <p>此时<code>~/.ssh/</code>目录共有4个文件：<em>id_rsa</em>、<em>id_rsa.pub</em>，<em>id_rsa_life</em>、<em>id_rsa_life.pub</em></p>
 <p><br></p>
 <figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#创建config文件并设置权限</div><div class="line">touch ~/.ssh/config</div><div class="line">chmod 600 ~/.ssh/config</div></pre></td></tr></table></figure>
@@ -129,6 +142,15 @@
 <p>由此已实现两个Hexo blog同时部署至GitHub，三个及以上同理</p>
 </section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#pc" >
+    <span class="tag-code">pc</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- 打赏 START -->
