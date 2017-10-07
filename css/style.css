@@ -124,6 +124,8 @@ h2.article-head {
   box-sizing: border-box;
   top: 0;
   left: 0;
+  margin-bottom: -50px;
+  margin-top: 30px;
   padding: 60px 20px 25px 20px;
   text-align: center;
   position: relative;
@@ -140,7 +142,7 @@ h2.article-head {
   margin: 0.4em 0;
   font-size: 2.2em;
   color: #42b983;
-  text-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 5px #fff;
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.4s;
@@ -786,11 +788,11 @@ h2.article-head {
 }
 @media screen and (max-width: 480px) {
   #about-banner {
-    height: 250px;
+    height: 200px;
   }
 }
 .author {
-  margin-top: -80px;
+  margin-top: -100px;
   width: 100%;
   background: #fff;
   text-align: center;
