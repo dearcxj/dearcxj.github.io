@@ -10,7 +10,7 @@
   
   <title>
     
-      关于建站及其他 | Dear CXJ
+      实现多个SSH将Hexo部署到GitHub | Dear CXJ
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,8 +112,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>关于建站及其他</h2>
-  <p class="post-date">2017-08-10</p>
+  <h2>实现多个SSH将Hexo部署到GitHub</h2>
+  <p class="post-date">2017-10-07</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -121,43 +121,32 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><img src="http://wx3.sinaimg.cn/mw690/006D2KSdly1fdfd94uzprg30dw07tq7n.gif" alt=""></p>
-<a id="more"></a>
-<hr>
-<p style="text-indent: 2em">不止一次在心里自问：学习三年财务管理给我带来了什么？</p>
-
-<p style="text-indent: 2em">我迫切期望的，是能建立会计思维，哪怕是简单的成本和收益。而依然故我，这三年，惬意过反编译APK，也重拾起了VB，以至于跑图书馆借的第一本书就是《VB程序设计》。可整天坐在电脑前值得吗？</p>
-
-<p style="text-indent: 2em">初中捣腾VBS恶作剧，高中教同学Android刷机，大学帮队友应付Office。现在，周围考CET-6的有，忙初级的更多，唯我把心思搁放在了分文不值的兴趣上，这连一个鸡蛋都买不起的兴趣。</p>
-
-<p style="text-indent: 2em">朋友问我大四为什么不自学计算机，一语中的，说起来真让人忧郁。因为风华渐息，我等不及未知剩余时长的碎片整理。或许被爱好俘虏了，更可能是我狗改不了吃屎。</p>
-
-<p style="text-indent: 2em">“如果我学计算机，肯定比现在好一万倍”，然而“如果”二字只会在作文中true。今晚旧友告诉我他拿到了500强企业的“软件工程师”Offer，如果，如果当初长点脑子，我也可以脱非入欧吗？还是安慰下自己，比现在差多了！</p>
-
-<p style="text-indent: 2em"><em>风险与报酬</em>，毕竟没有几个人能将爱好与职业统一。</p>
-
-<p style="text-align: center"><strong>始于兴趣，而不会终于兴趣；</strong><br><strong>无如现实，而不会茫如现实。</strong></p>
-
-<p style="text-align: center"><font color="red">感谢在建站、优化过程中给予我莫大帮助的二位挚友：</font><a href="https://github.com/leekoho" target="_blank" rel="external">leekoho</a>、<a href="https://www.oyohyee.com/" target="_blank" rel="external">OhYee</a></p>
-
-<hr>
-<p><img src="https://i.loli.net/2017/08/10/598c238ae58fc.jpg" alt=""></p>
-<blockquote>
-<p>有些时候，成就感一样也是幸福感。——《守护丽人》</p>
-</blockquote>
-<hr>
-<p>太阳升起</p>
-<blockquote>
-<p>奸巧语 秽污词 市井气 切戒之 ——《弟子规•信》</p>
-</blockquote>
+    <section class="markdown-content"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>两个及以上Hexo blog同时完成GitHub部署</p>
+<a id="more"></a> 
+<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//生成第一个SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;E-mail 1&quot;</div><div class="line">//生成第二个SSH key并命名为id_rsa_life</div><div class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_life -C &quot;E-mail 2&quot;</div></pre></td></tr></table></figure>
+<p>此时<code>~/.ssh/</code>目录共有4个文件：<em>id_rsa</em>、<em>id_rsa.pub</em>，<em>id_rsa_life</em>、<em>id_rsa_life.pub</em></p>
+<p><br></p>
+<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//创建config文件并设置权限</div><div class="line">touch ~/.ssh/config</div><div class="line">chmod 600 ~/.ssh/config</div></pre></td></tr></table></figure>
+<p><br></p>
+<p>编辑<code>config</code>添加以下内容并保存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Host github.com  </div><div class="line">    HostName github.com</div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile ~/.ssh/id_rsa</div><div class="line"></div><div class="line">Host github_life.com</div><div class="line">    HostName github.com </div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile ~/.ssh/id_rsa_life</div></pre></td></tr></table></figure>
+<p><br></p>
+<p>测试配置是否正确</p>
+<figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">$ ssh -T git@life.github.com</div></pre></td></tr></table></figure>
+<p>若提示“<em>Hi xxx! You’ve successfully authenticated.</em>”则成功</p>
+<p><br></p>
+<p>站点1配置文件按<code>HTTPS</code>即可，修改站点2配置文件以<code>SSH</code>格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github_life.com:hellotsao/hellotsao.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p><br></p>
+<p>由此已实现两个Hexo blog同时部署至GitHub，三个及以上同理</p>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#其他" >
-    <span class="tag-code">其他</span>
+  <a href="/tags#PC" >
+    <span class="tag-code">PC</span>
   </a>
 
       </div>
@@ -179,8 +168,8 @@
 
 <script>
   (function () {
-    var url = 'http://dearcxj.com/2017/08/10/关于建站及其他/';
-    var banner = ''
+    var url = 'http://dearcxj.com/2017/10/07/实现多个SSH将Hexo部署到GitHub/';
+    var banner = 'http://outx7lwnx.bkt.clouddn.com/code_ssh.jpg'
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
         'background-image': 'url(' + banner + ')'
@@ -230,7 +219,7 @@
     var gitmentConfig = "";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "关于建站及其他",
+        id: "实现多个SSH将Hexo部署到GitHub",
         owner: "",
         repo: "",
         oauth: {

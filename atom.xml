@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dearcxj.com/"/>
-  <updated>2017-10-07T05:28:53.153Z</updated>
+  <updated>2017-10-07T08:03:42.743Z</updated>
   <id>http://dearcxj.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现多个SSH将Hexo部署到GitHub</title>
+    <link href="http://dearcxj.com/2017/10/07/%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AASSH%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"/>
+    <id>http://dearcxj.com/2017/10/07/实现多个SSH将Hexo部署到GitHub/</id>
+    <published>2017-10-07T06:34:02.000Z</published>
+    <updated>2017-10-07T08:03:42.743Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>两个及以上Hexo blog同时完成GitHub部署</p><a id="more"></a> <figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//生成第一个SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;E-mail 1&quot;</div><div class="line">//生成第二个SSH key并命名为id_rsa_life</div><div class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_life -C &quot;E-mail 2&quot;</div></pre></td></tr></table></figure><p>此时<code>~/.ssh/</code>目录共有4个文件：<em>id_rsa</em>、<em>id_rsa.pub</em>，<em>id_rsa_life</em>、<em>id_rsa_life.pub</em></p><p><br></p><figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//创建config文件并设置权限</div><div class="line">touch ~/.ssh/config</div><div class="line">chmod 600 ~/.ssh/config</div></pre></td></tr></table></figure><p><br></p><p>编辑<code>config</code>添加以下内容并保存</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Host github.com  </div><div class="line">    HostName github.com</div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile ~/.ssh/id_rsa</div><div class="line"></div><div class="line">Host github_life.com</div><div class="line">    HostName github.com </div><div class="line">    PreferredAuthentications publickey</div><div class="line">    IdentityFile ~/.ssh/id_rsa_life</div></pre></td></tr></table></figure><p><br></p><p>测试配置是否正确</p><figure class="highlight plain"><figcaption><span>Bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">$ ssh -T git@life.github.com</div></pre></td></tr></table></figure><p>若提示“<em>Hi xxx! You’ve successfully authenticated.</em>”则成功</p><p><br></p><p>站点1配置文件按<code>HTTPS</code>即可，修改站点2配置文件以<code>SSH</code>格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github_life.com:hellotsao/hellotsao.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure><p><br></p><p>由此已实现两个Hexo blog同时部署至GitHub，三个及以上同理</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;两个及以上Hexo blog同时完成GitHub部署&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PC" scheme="http://dearcxj.com/tags/PC/"/>
+    
+  </entry>
   
   <entry>
     <title>再见了，LOL！</title>
@@ -41,9 +61,9 @@
     <link href="http://dearcxj.com/2017/09/13/%E5%BC%80%E5%AD%A6%E4%B8%89%E4%B8%A4%E5%A4%A9/"/>
     <id>http://dearcxj.com/2017/09/13/开学三两天/</id>
     <published>2017-09-13T09:11:54.000Z</published>
-    <updated>2017-10-07T05:29:15.956Z</updated>
+    <updated>2017-10-07T08:05:58.670Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><img src="http://wx3.sinaimg.cn/mw690/006D2KSdly1ffjjsslsx5g30b4069x6p.gif" alt=""></p><a id="more"></a><hr><p style="text-indent: 2em">“应该都是学长吧”，晚上一传单男进我们宿舍瞅了几眼后猜道。或许是因为走道两边夺目的数个大箱子，让本该整洁的小地方充盈着老油条气息。</p><p style="text-indent: 2em">在30℃的秋日照耀下，望着远处三五成群的新校友，仿佛回到了三年前。抱怨不提供直饮水的宿舍楼、厌烦形式大于内容的“特色工程”、诉苦取快递还得跨校区……而如今，早已对种种缺憾熟视无睹，再也不会自攒失望去发牢骚。</p><p>想起那天夕阳下的奔跑，那是我逝去的青春。</p><hr><p style="text-indent: 2em">9月12日下午，终于受不了宿舍龟速的数据网络，与一室友商量，干脆用他的校园卡合办上网套餐。因为校园网限制PC、移动端同时在线，所以计划的是谁需要就登号。</p><p style="text-indent: 2em">随后，和去年的冰川客户端相似，我找出了突破限制的方法，通过连入的wifi再发射本机热点信号就可以实现1带8。换句话讲，整个宿舍只要有一人办理套餐，其他5个人都能免费上网。至于网速，多终端同步看超清直播居然不用缓冲。</p><p style="text-indent: 2em">同学感慨“<strong>所有人都喜欢跟你一起共事</strong>”，暂且不管他的话是不是建立在“久旱逢甘雨”后短暂的喜悦上，寥寥几字足够让我从心而外的高兴。</p><p style="text-indent: 2em">“今天我们解决了‘宿舍饮水、网络、电脑卡顿’三大问题”，最强的幸福感，莫过于愉悦了自己，也满足了别人。</p><hr><p>篮球队员、游泳选手有颇多追慕者，而不知何处的科研人员平日却鲜有人关注。由此也能说明：当得不到大多数人瞩目亦或一句赞扬时，别徒手浇灭了自己的热情，或许对方还没触及到你的领域、层次呢。</p><hr><p>我最欣赏两类人：一是能把自己的心境置入画中的艺术家，二是可以用声音表达情感的音乐家。可我只是曹笑嘉：）</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><img src="http://wx3.sinaimg.cn/mw690/006D2KSdly1ffjjsslsx5g30b4069x6p.gif" alt=""></p><a id="more"></a><hr><p style="text-indent: 2em">“应该都是学长吧”，晚上一传单男进我们宿舍瞅了几眼后猜道。或许是因为走道两边夺目的数个大箱子，让本该整洁的小地方充盈着老油条气息。</p><p style="text-indent: 2em">在30℃的秋日照耀下，望着远处三五成群的新校友，仿佛回到了三年前。抱怨不提供直饮水的宿舍楼、厌烦形式大于内容的“特色工程”、诉苦取快递还得跨校区……而如今，早已对种种缺憾熟视无睹，再也不会自攒失望去发牢骚。</p><p style="text-align: center">想起那天夕阳下的奔跑，那是我逝去的青春。</p><hr><p style="text-indent: 2em">9月12日下午，终于受不了宿舍龟速的数据网络，与一室友商量，干脆用他的校园卡合办上网套餐。因为校园网限制PC、移动端同时在线，所以计划的是谁需要就登号。</p><p style="text-indent: 2em">随后，和去年的冰川客户端相似，我找出了突破限制的方法，通过连入的wifi再发射本机热点信号就可以实现1带8。换句话讲，整个宿舍只要有一人办理套餐，其他5个人都能免费上网。至于网速，多终端同步看超清直播居然不用缓冲。</p><p style="text-indent: 2em">同学感慨“<strong>所有人都喜欢跟你一起共事</strong>”，暂且不管他的话是不是建立在“久旱逢甘雨”后短暂的喜悦上，寥寥几字足够让我从心而外的高兴。</p><p style="text-indent: 2em">“今天我们解决了‘宿舍饮水、网络、电脑卡顿’三大问题”，最强的幸福感，莫过于愉悦了自己，也满足了别人。</p><hr><p>篮球队员、游泳选手有颇多追慕者，而不知何处的科研人员平日却鲜有人关注。由此也能说明：当得不到大多数人瞩目亦或一句赞扬时，别徒手浇灭了自己的热情，或许对方还没触及到你的领域、层次呢。</p><hr><p>我最欣赏两类人：一是能把自己的心境置入画中的艺术家，二是可以用声音表达情感的音乐家。可我只是曹笑嘉：）</p>]]></content>
     
     <summary type="html">
     
@@ -206,9 +226,9 @@
     <link href="http://dearcxj.com/2017/08/10/%E5%85%B3%E4%BA%8E%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%85%B6%E4%BB%96/"/>
     <id>http://dearcxj.com/2017/08/10/关于建站及其他/</id>
     <published>2017-08-10T08:32:35.000Z</published>
-    <updated>2017-10-07T05:28:42.522Z</updated>
+    <updated>2017-10-07T08:05:49.339Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><img src="http://wx3.sinaimg.cn/mw690/006D2KSdly1fdfd94uzprg30dw07tq7n.gif" alt=""></p><a id="more"></a><hr><p style="text-indent: 2em">不止一次在心里自问：学习三年财务管理给我带来了什么？</p><p style="text-indent: 2em">我迫切期望的，是能建立会计思维，哪怕是简单的成本和收益。而依然故我，这三年，惬意过反编译APK，也重拾起了VB，以至于跑图书馆借的第一本书就是《VB程序设计》。可整天坐在电脑前值得吗？</p><p style="text-indent: 2em">初中捣腾VBS恶作剧，高中教同学Android刷机，大学帮队友应付Office。现在，周围考CET-6的有，忙初级的更多，唯我把心思搁放在了分文不值的兴趣上，这连一个鸡蛋都买不起的兴趣。</p><p style="text-indent: 2em">朋友问我大四为什么不自学计算机，一语中的，说起来真让人忧郁。因为风华渐息，我等不及未知剩余时长的碎片整理。或许被爱好俘虏了，更可能是我狗改不了吃屎。</p><p style="text-indent: 2em">“如果我学计算机，肯定比现在好一万倍”，然而“如果”二字只会在作文中true。今晚旧友告诉我他拿到了500强企业的“软件工程师”Offer，如果，如果当初长点脑子，我也可以脱非入欧吗？还是安慰下自己，比现在差多了！</p><p style="text-indent: 2em"><em>风险与报酬</em>，毕竟没有几个人能将爱好与职业统一。</p><p style="text-align: center"><strong>始于兴趣，而不会终于兴趣；</strong><br><strong>无如现实，而不会茫如现实。</strong></p><p><font color="red">感谢在建站、优化过程中给予我莫大帮助的二位挚友：</font><a href="https://github.com/leekoho" target="_blank" rel="external">leekoho</a>、<a href="https://www.oyohyee.com/" target="_blank" rel="external">OhYee</a></p><hr><p><img src="https://i.loli.net/2017/08/10/598c238ae58fc.jpg" alt=""></p><blockquote><p>有些时候，成就感一样也是幸福感。——《守护丽人》</p></blockquote><hr><p>太阳升起</p><blockquote><p>奸巧语 秽污词 市井气 切戒之 ——《弟子规•信》</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><img src="http://wx3.sinaimg.cn/mw690/006D2KSdly1fdfd94uzprg30dw07tq7n.gif" alt=""></p><a id="more"></a><hr><p style="text-indent: 2em">不止一次在心里自问：学习三年财务管理给我带来了什么？</p><p style="text-indent: 2em">我迫切期望的，是能建立会计思维，哪怕是简单的成本和收益。而依然故我，这三年，惬意过反编译APK，也重拾起了VB，以至于跑图书馆借的第一本书就是《VB程序设计》。可整天坐在电脑前值得吗？</p><p style="text-indent: 2em">初中捣腾VBS恶作剧，高中教同学Android刷机，大学帮队友应付Office。现在，周围考CET-6的有，忙初级的更多，唯我把心思搁放在了分文不值的兴趣上，这连一个鸡蛋都买不起的兴趣。</p><p style="text-indent: 2em">朋友问我大四为什么不自学计算机，一语中的，说起来真让人忧郁。因为风华渐息，我等不及未知剩余时长的碎片整理。或许被爱好俘虏了，更可能是我狗改不了吃屎。</p><p style="text-indent: 2em">“如果我学计算机，肯定比现在好一万倍”，然而“如果”二字只会在作文中true。今晚旧友告诉我他拿到了500强企业的“软件工程师”Offer，如果，如果当初长点脑子，我也可以脱非入欧吗？还是安慰下自己，比现在差多了！</p><p style="text-indent: 2em"><em>风险与报酬</em>，毕竟没有几个人能将爱好与职业统一。</p><p style="text-align: center"><strong>始于兴趣，而不会终于兴趣；</strong><br><strong>无如现实，而不会茫如现实。</strong></p><p style="text-align: center"><font color="red">感谢在建站、优化过程中给予我莫大帮助的二位挚友：</font><a href="https://github.com/leekoho" target="_blank" rel="external">leekoho</a>、<a href="https://www.oyohyee.com/" target="_blank" rel="external">OhYee</a></p><hr><p><img src="https://i.loli.net/2017/08/10/598c238ae58fc.jpg" alt=""></p><blockquote><p>有些时候，成就感一样也是幸福感。——《守护丽人》</p></blockquote><hr><p>太阳升起</p><blockquote><p>奸巧语 秽污词 市井气 切戒之 ——《弟子规•信》</p></blockquote>]]></content>
     
     <summary type="html">
     
