@@ -817,7 +817,8 @@ h2.article-head {
 }
 @media screen and (max-width: 480px) {
   .author {
-    height: 200px;
+    width: 100px;
+    height: 100px;
   }
 }
 .author h3 {
