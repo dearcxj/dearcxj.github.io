@@ -785,7 +785,7 @@ h2.article-head {
 }
 @media screen and (max-width: 480px) {
   #about-banner {
-    height: 250px;
+    height: 200px;
   }
 }
 .author {
@@ -814,6 +814,11 @@ h2.article-head {
   height: 100%;
   display: block;
   border-radius: 50%;
+}
+@media screen and (max-width: 480px) {
+  .author {
+    height: 200px;
+  }
 }
 .author h3 {
   font-size: 1.4em;
