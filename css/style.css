@@ -34,7 +34,7 @@ a {
   cursor: pointer;
 }
 p {
-  word-spacing: 11em;
+  word-spacing: 0.05em;
 }
 pre {
   overflow-x: auto;
